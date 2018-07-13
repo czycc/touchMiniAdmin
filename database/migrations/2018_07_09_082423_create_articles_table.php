@@ -19,13 +19,13 @@ class CreateArticlesTable extends Migration
             $table->string('desc')->comment('描述');
             $table->text('content');
             $table->text('img_url');
-            $table->string('wechat_users_name');
+            $table->string('users_name');
             $table->integer('category_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('wechat_users_name')
+            $table->foreign('users_name')
                 ->references('name')
-                ->on('wechat_users')
+                ->on('users')
                 ->onDelete('no action')
                 ->onUpdate('cascade');
             $table->foreign('category_id')

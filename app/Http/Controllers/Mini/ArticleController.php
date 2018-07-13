@@ -16,11 +16,15 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        $articles = Article::select(['id', 'title', 'desc', 'img_url', 'wechat_users_name', 'created_at'])->get();
+        //预加载 按时间倒序查询20条数据
+        $articles = Category::with(['articles' => function ($query) {
+            $query->select(['id', 'title', 'desc', 'img_url', 'wechat_users_name', 'category_id', 'created_at'])
+                ->orderBy('created_at', 'desc')
+                ->take(100);
+        }])->get();
+
         return response()->json([
-            'categories' => $categories,
-            'articles' => $articles
+            'articles' => $articles,
         ]);
     }
 
