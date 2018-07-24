@@ -19,12 +19,12 @@ class CreateArticlesTable extends Migration
             $table->string('desc')->comment('描述');
             $table->text('content');
             $table->text('img_url');
-            $table->string('users_name');
+            $table->integer('user_id');
             $table->integer('category_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('users_name')
-                ->references('name')
+            $table->foreign('user_id')
+                ->references('id')
                 ->on('users')
                 ->onDelete('no action')
                 ->onUpdate('cascade');
