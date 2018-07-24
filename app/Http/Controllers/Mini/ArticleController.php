@@ -18,7 +18,8 @@ class ArticleController extends Controller
     {
         //预加载 按时间倒序查询20条数据
         $articles = Category::with(['articles' => function ($query) {
-            $query->select(['id', 'title', 'desc', 'img_url', 'users_name', 'category_id', 'created_at'])
+            $query->select(['articles.id', 'title', 'desc', 'img_url', 'user_id', 'category_id', 'articles.created_at'])
+                ->leftJoin('users', 'articles.user_id', '=', 'users.id')
                 ->orderBy('created_at', 'desc')
                 ->take(100);
         }])->get();
