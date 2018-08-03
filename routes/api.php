@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('articles', 'Mini\ArticleController');
 Route::resource('projects', 'Mini\ProjectController');
-
+Route::get('about', 'Mini\AboutController@index');
