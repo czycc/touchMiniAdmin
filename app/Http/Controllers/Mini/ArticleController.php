@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Mini;
 
 use App\Models\Category;
 use App\Models\Article;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -23,7 +24,6 @@ class ArticleController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->take(100);
         }])->get();
-
         return response()->json([
             'articles' => $articles,
         ]);
