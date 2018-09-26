@@ -19,7 +19,7 @@ class IndexController extends Controller
     {
         $user = PinganUser::Where('email', $request->email)->first();
         if (is_null($user)) {
-            $user = new PingAn();
+            $user = new PinganUser();
         }
         $image = $request->input('image');
         $image = str_replace('data:image/jpeg;base64,', '' , $image);
