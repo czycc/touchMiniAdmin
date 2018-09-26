@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\PingAn;
 
+use App\Models\PinganUser;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\PingAn;
 
 class IndexController extends Controller
 {
@@ -17,7 +17,7 @@ class IndexController extends Controller
 
     public function upload(Request $request)
     {
-        $user = PingAn::Where('email', $request->email)->first();
+        $user = PinganUser::Where('email', $request->email)->first();
         if (is_null($user)) {
             $user = new PingAn();
         }
