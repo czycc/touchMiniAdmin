@@ -115,6 +115,9 @@ $(function () {
 		} else {
 			$('.loading').show()
 			$.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token-1"]').attr('content')
+                },
 				method: 'POST',
 				url: 'http://xg.touchworld-sh.com/api/pingAn/user',
 				data: {
