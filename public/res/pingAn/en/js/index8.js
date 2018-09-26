@@ -134,7 +134,9 @@ $(function () {
 					$('.stage2').hide()
 					$('.stage3').show()
 				}
-			})
+			}).fail(function (res) {
+				console.log(res)
+            })
 		}
 	})
 	$('.stage2 .return').on('touchend', () => {
