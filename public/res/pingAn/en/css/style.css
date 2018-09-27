@@ -339,8 +339,8 @@ html, body {
   top: 0.05333rem;
   left: 2.26667rem;
   width: 0.22667rem;
-  height: 11.64rem;
-  background: url("../images/page5_line.png") no-repeat;
+  height: 9.88rem;
+  background: url("../images/page5_line_new.png") no-repeat;
   background-size: 100% 100%;
 }
 
@@ -363,7 +363,7 @@ html, body {
   width: 8.62667rem;
   height: 1.48rem;
   margin-top: 0.48rem;
-  background: url("../images/page5_text3_new.png") no-repeat;
+  background: url("../images/page5_text3.png") no-repeat;
   background-size: 100% 100%;
 }
 
@@ -394,15 +394,15 @@ html, body {
 .page5 .content .text7 {
   width: 2.90667rem;
   height: 0.36rem;
-  margin-top: 0.56rem;
-  background: url("../images/page5_text7_new.png") no-repeat;
+  margin-top: 0.45333rem;
+  background: url("../images/page5_text7.png") no-repeat;
   background-size: 100% 100%;
 }
 
 .page5 .content .text8 {
   width: 4.10667rem;
   height: 0.36rem;
-  margin-top: 0.64rem;
+  margin-top: 0.8rem;
   background: url("../images/page5_text8_new.png") no-repeat;
   background-size: 100% 100%;
 }

@@ -306,8 +306,8 @@ html, body {
       top: PX(4);
       left: PX(170);
       width: PX(17);
-      height: PX(873);
-      @include bg('../images/page5_line.png');
+      height: PX(741);
+      @include bg('../images/page5_line_new.png');
     }
     .text1 {
       width: PX(281);
@@ -324,7 +324,7 @@ html, body {
       width: PX(647);
       height: PX(111);
       margin-top: PX(36);
-      @include bg('../images/page5_text3_new.png');
+      @include bg('../images/page5_text3.png');
     }
     .text4 {
       width: PX(594);
@@ -347,13 +347,13 @@ html, body {
     .text7 {
       width: PX(218);
       height: PX(27);
-      margin-top: PX(42);
-      @include bg('../images/page5_text7_new.png');
+      margin-top: PX(34);
+      @include bg('../images/page5_text7.png');
     }
     .text8{
       width: PX(308);
       height: PX(27);
-      margin-top: PX(48);
+      margin-top: PX(60);
       @include bg('../images/page5_text8_new.png');
     }
   }
