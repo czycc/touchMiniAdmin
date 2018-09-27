@@ -115,7 +115,7 @@ $(function () {
 		} else {
 			$('.loading').show()
 			$.ajax({
-                headers: {
+				headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token-1"]').attr('content')
                 },
 				method: 'POST',
