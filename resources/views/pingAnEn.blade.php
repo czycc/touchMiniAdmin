@@ -9,6 +9,7 @@
   <script src="js/rem.js"></script>
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <meta name="csrf-token-1" content="{{ csrf_token() }}">
 </head>
 
 <body>
