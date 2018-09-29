@@ -13,3 +13,6 @@ yarn-error.log
 /_ide_helper.php
 /_ide_helper_models.php
 public/res/pingAn/en/.DS_Store
+/public/js/manifest.js
+/public/js/mobile.js
+/public/js/vendor.js
