@@ -2,30 +2,27 @@
 
 namespace App\Http\Controllers\Mini;
 
-use App\Models\ArticleCategory;
-use App\Models\Article;
-use Carbon\Carbon;
+use App\Models\VideoCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ArticleController extends Controller
+class VideoController extends Controller
 {
     /**
-     * 返回文章列表
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //预加载 按时间倒序查询100条数据
-        $articles = ArticleCategory::with(['articles' => function ($query) {
-            $query->select(['articles.id', 'title', 'desc', 'img_url', 'user_id', 'article_category_id', 'articles.created_at'])
-                ->leftJoin('users', 'articles.user_id', '=', 'users.id')
+        $videos = VideoCategory::with(['videos' => function ($query) {
+            $query->select(['videos.id', 'title', 'desc', 'video_url', 'video_category_id', 'videos.created_at'])
                 ->orderBy('created_at', 'desc')
                 ->take(100);
         }])->get();
+
         return response()->json([
-            'data' => $articles,
+            'data' => $videos
         ]);
     }
 
@@ -58,10 +55,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::find($id);
-        return response()->json([
-            'data' => $article
-        ]);
+        //
     }
 
     /**

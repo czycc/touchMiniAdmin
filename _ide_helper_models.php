@@ -41,8 +41,8 @@ namespace App\Models{
  * @property int $id
  * @property string $category
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Article[] $Articles
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereCategory($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ArticleCategory whereCategory($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ArticleCategory whereId($value)
  */
 	class Category extends \Eloquent {}
 }

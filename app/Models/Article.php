@@ -10,6 +10,6 @@ class Article extends Model
 
     public function Category()
     {
-        $this->belongsTo('App\Models\Category');
+        $this->belongsTo('App\Models\ArticleCategory');
     }
 }

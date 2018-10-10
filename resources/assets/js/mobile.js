@@ -9,7 +9,6 @@ require('./bootstrap');
 window.Vue = require('vue');
 import { AlertPlugin, ToastPlugin } from 'vux'
 import VueRouter from 'vue-router'
-require('./router');
 
 Vue.use(VueRouter);
 Vue.use(AlertPlugin);
@@ -20,8 +19,14 @@ Vue.use(ToastPlugin);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+const routes = [
+    {
+        'path' : 'mobile'
+    }
+];
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router: router,
+    render: app => app(App)
 });
