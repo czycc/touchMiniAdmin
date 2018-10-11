@@ -1,8 +1,10 @@
-import VueRouter from "vue-router";
+// import Index from './components/index/Index.vue'
 
-const router = new VueRouter({
-    mode: 'history',
-    routes: [
-        {}
-    ]
-})
+const routes = [
+    {
+        path: '/admin/index',
+        component: () => import('./components/index/Index.vue')
+    }
+];
+
+export default routes;
