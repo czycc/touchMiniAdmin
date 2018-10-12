@@ -6,14 +6,15 @@
  */
 
 import './bootstrap'
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import App from './App.vue'
 import routes from './router.js';
+import Vuex from 'vuex';
 
-
+Vue.use(Vuex)
 Vue.use(iView);
 Vue.use(VueRouter);
 
@@ -24,6 +25,6 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
-    router: router,
+    router,
     render: app => app(App)
 });

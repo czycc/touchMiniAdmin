@@ -9,6 +9,9 @@ export default {
     return {
       tableData: []
     };
+  },
+  created: function() {
+    axios.get("/category/videos").then(function(res) {});
   }
 };
 </script>

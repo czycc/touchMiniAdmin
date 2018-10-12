@@ -16,6 +16,7 @@ class CreateVideoCategoriesTable extends Migration
         Schema::create('video_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category', 10)->unique();
+            $table->softDeletes();
         });
     }
 

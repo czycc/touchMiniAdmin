@@ -4,6 +4,9 @@ const routes = [
     {
         path: '/admin/index',
         component: () => import('./components/index/Index.vue')
+    }, {
+        path: '/admin/category/videos',
+        component: () => import('./components/category/Videos.vue')
     }
 ];
 
