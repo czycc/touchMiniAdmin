@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('res/pingAn/en/index', 'PingAn\IndexController@index');
+Route::get('res/pingAn/en/index', function () {
+    return '很遗憾，报名已截止';
+});
 Route::post('api/pingAn/user', 'PingAn\IndexController@upload');
 
 Route::apiResource('category/videos', 'Admin\VideoCategoryController');
