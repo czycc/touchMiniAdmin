@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		1: 0
+/******/ 		2: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -12517,7 +12517,7 @@ var token = document.getElementsByTagName('meta')['csrf-token'];
 if (token) {
   console.log(token.content);
   window.axios = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-    baseURL: Object({"NODE_ENV":"development"}).MIX_APP_URL
+    baseURL: "http://gotop-admin.test"
   });
   window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
@@ -75219,6 +75219,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -75318,25 +75320,52 @@ var render = function() {
                     "Menu",
                     {
                       attrs: {
-                        "active-name": "1-2",
+                        "active-name": "3-1",
                         theme: "light",
                         width: "auto",
-                        "open-names": ["1"]
+                        "open-names": ["3"]
                       }
                     },
                     [
                       _c(
+                        "MenuItem",
+                        { attrs: { name: "1", to: "/admin/index" } },
+                        [
+                          _c("Icon", { attrs: { type: "md-home" } }),
+                          _vm._v(" 首页\n                    ")
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "MenuGroup",
+                        { attrs: { title: "基础管理" } },
+                        [
+                          _c(
+                            "MenuItem",
+                            { attrs: { name: "2", to: "/admin/tags" } },
+                            [
+                              _c("Icon", { attrs: { type: "md-document" } }),
+                              _vm._v(
+                                "\n                        标签管理\n                        "
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
                         "Submenu",
-                        { attrs: { name: "1" } },
+                        { attrs: { name: "3" } },
                         [
                           _c(
                             "template",
                             { slot: "title" },
                             [
-                              _c("Icon", {
-                                attrs: { type: "ios-american-football" }
-                              }),
-                              _vm._v("分类\n                        ")
+                              _c("Icon", { attrs: { type: "logo-youtube" } }),
+                              _vm._v("小程序视频模块\n                        ")
                             ],
                             1
                           ),
@@ -75345,15 +75374,15 @@ var render = function() {
                             "MenuItem",
                             {
                               attrs: {
-                                name: "1-1",
+                                name: "3-1",
                                 to: "/admin/category/videos"
                               }
                             },
-                            [_vm._v("小程序视频模块")]
+                            [_vm._v("视频分类")]
                           ),
                           _vm._v(" "),
-                          _c("MenuItem", { attrs: { name: "1-2" } }, [
-                            _vm._v("小程序文章模块")
+                          _c("MenuItem", { attrs: { name: "3-2" } }, [
+                            _vm._v("视频列表")
                           ])
                         ],
                         2
@@ -75361,32 +75390,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "Submenu",
-                        { attrs: { name: "2" } },
-                        [
-                          _c(
-                            "template",
-                            { slot: "title" },
-                            [
-                              _c("Icon", { attrs: { type: "ios-keypad" } }),
-                              _vm._v("Item 2\n                        ")
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("MenuItem", { attrs: { name: "2-1" } }, [
-                            _vm._v("Option 1")
-                          ]),
-                          _vm._v(" "),
-                          _c("MenuItem", { attrs: { name: "2-2" } }, [
-                            _vm._v("Option 2")
-                          ])
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "Submenu",
-                        { attrs: { name: "3" } },
+                        { attrs: { name: "4" } },
                         [
                           _c(
                             "template",
@@ -75398,11 +75402,11 @@ var render = function() {
                             1
                           ),
                           _vm._v(" "),
-                          _c("MenuItem", { attrs: { name: "3-1" } }, [
+                          _c("MenuItem", { attrs: { name: "4-1" } }, [
                             _vm._v("Option 1")
                           ]),
                           _vm._v(" "),
-                          _c("MenuItem", { attrs: { name: "3-2" } }, [
+                          _c("MenuItem", { attrs: { name: "4-2" } }, [
                             _vm._v("Option 2")
                           ])
                         ],
@@ -75477,12 +75481,17 @@ if (false) {
 var routes = [{
     path: '/admin/index',
     component: function component() {
-        return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 57));
+        return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 57));
     }
 }, {
     path: '/admin/category/videos',
     component: function component() {
-        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 63));
+        return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 58));
+    }
+}, {
+    path: '/admin/tags',
+    component: function component() {
+        return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 68));
     }
 }];
 

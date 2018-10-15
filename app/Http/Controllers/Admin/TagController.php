@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\VideoCategory;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class VideoCategoryController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,10 @@ class VideoCategoryController extends Controller
      */
     public function index()
     {
-        $categories = VideoCategory::all();
+        $tags = Tag::all();
+
         return response()->json([
-            'data' => $categories
+            'data' => $tags
         ]);
     }
 
@@ -39,11 +40,14 @@ class VideoCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new VideoCategory();
-        $category->category = $request->input('category');
-        $category->save();
+        $tag = new Tag();
+        $tag->name = $request->input('name');
+        $tag->description = $request->input('description');
+        $tag->save();
 
-        return response()->json($category, 201);
+        return response()->json([
+            'data' => $tag
+        ], 201);
     }
 
     /**
@@ -65,6 +69,7 @@ class VideoCategoryController extends Controller
      */
     public function edit($id)
     {
+        //
     }
 
     /**
@@ -76,11 +81,14 @@ class VideoCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = VideoCategory::find($id);
-        $category->category = $request->input('category');
-        $category->save();
+        $tag = Tag::find($id);
+        $tag->name = $request->input('name');
+        $tag->description = $request->input('description');
+        $tag->save();
 
-        return response()->json($category, 201);
+        return response()->json([
+            'data' => $tag
+        ]);
     }
 
     /**
@@ -91,8 +99,8 @@ class VideoCategoryController extends Controller
      */
     public function destroy($id)
     {
-        VideoCategory::destroy($id);
+        Tag::destroy($id);
 
-        return response(null ,204);
+        return response(null, 204);
     }
 }

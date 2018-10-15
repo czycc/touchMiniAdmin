@@ -7,6 +7,9 @@ const routes = [
     }, {
         path: '/admin/category/videos',
         component: () => import('./components/category/Videos.vue')
+    }, {
+        path: '/admin/tags',
+        component: () => import('./components/tag/Tag.vue')
     }
 ];
 

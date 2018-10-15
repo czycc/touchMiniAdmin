@@ -22,27 +22,29 @@
             </Header>
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff', minHeight: '750px'}">
-                    <Menu active-name="1-2" theme="light" width="auto" :open-names="['1']">
-                        <Submenu name="1">
-                            <template slot="title">
-                                <Icon type="ios-american-football" />分类
-                            </template>
-                            <MenuItem name="1-1" to="/admin/category/videos">小程序视频模块</MenuItem>
-                            <MenuItem name="1-2">小程序文章模块</MenuItem>
-                        </Submenu>
-                        <Submenu name="2">
-                            <template slot="title">
-                                <Icon type="ios-keypad"></Icon>Item 2
-                            </template>
-                            <MenuItem name="2-1">Option 1</MenuItem>
-                            <MenuItem name="2-2">Option 2</MenuItem>
-                        </Submenu>
+                    <Menu active-name="3-1" theme="light" width="auto" :open-names="['3']">
+                        <MenuItem name="1" to="/admin/index">
+                        <Icon type="md-home" /> 首页
+                        </MenuItem>
+                        <MenuGroup title="基础管理">
+                            <MenuItem name="2" to="/admin/tags">
+                            <Icon type="md-document" />
+                            标签管理
+                            </MenuItem>
+                        </MenuGroup>
                         <Submenu name="3">
+                            <template slot="title">
+                                <Icon type="logo-youtube" />小程序视频模块
+                            </template>
+                            <MenuItem name="3-1" to="/admin/category/videos">视频分类</MenuItem>
+                            <MenuItem name="3-2">视频列表</MenuItem>
+                        </Submenu>
+                        <Submenu name="4">
                             <template slot="title">
                                 <Icon type="ios-analytics"></Icon>Item 3
                             </template>
-                            <MenuItem name="3-1">Option 1</MenuItem>
-                            <MenuItem name="3-2">Option 2</MenuItem>
+                            <MenuItem name="4-1">Option 1</MenuItem>
+                            <MenuItem name="4-2">Option 2</MenuItem>
                         </Submenu>
                     </Menu>
                 </Sider>

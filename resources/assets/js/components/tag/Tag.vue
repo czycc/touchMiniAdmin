@@ -1,8 +1,8 @@
 <template>
-    <div id="category-video">
+    <div id="category-tag">
+
         <p style="text-align:right;padding-bottom:20px">
-            <Input v-model.trim="createCategory" placeholder="请输入类别名" style="width:150px;padding-right:10px"></Input>
-            <Button type="success" size="small" @click="create()">新增</Button>
+            <Button type="success" size="small" @click="createModal = true">新增</Button>
         </p>
 
         <Table :columns="columns" :data="data"></Table>
@@ -13,31 +13,63 @@
                 <span>删除确认</span>
             </p>
             <div style="text-align:center">
-                <p>删除后会类别下的文章将不再显示</p>
+                <p>删除后会清除所有文章视频已添加的标签</p>
                 <p>确认删除？</p>
             </div>
             <div slot="footer">
-                <Button type="error" size="large" long :loading="modal_loading" @click="delCategory">删除</Button>
+                <Button type="error" size="large" long :loading="modal_loading" @click="delData">删除</Button>
             </div>
         </Modal>
 
-        <Modal v-model="editModal" title="修改类别" @on-ok="editCategory">
-            <Input v-model.trim="selectCategory"></Input>
+        <Modal v-model="editModal" title="修改标签" @on-ok="editData">
+            <section class="modal-input">
+                <p>
+                    <label for="name"> 标签名*：</label>
+                    <Input v-model.trim="selectTag.name" name="name"></Input>
+                </p>
+                <p>
+                    <label for="description">描述：</label>
+                    <Input v-model.trim="selectTag.description" name="description"></Input>
+                </p>
+            </section>
+        </Modal>
+
+        <Modal v-model="createModal" title="新增标签" @on-ok="createData">
+            <section class="modal-input">
+                <p>
+                    <label for="name"> 标签名*：</label>
+                    <Input v-model.trim="createTag.name" name="name"></Input>
+                </p>
+                <p>
+                    <label for="description">描述：</label>
+                    <Input v-model.trim="createTag.description" name="description"></Input>
+                </p>
+            </section>
         </Modal>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Videos",
+    name: "Tag",
     data() {
         return {
+            createModal: false,
             delModal: false,
             editModal: false,
-            selectCategory: null,
-            createCategory: "",
-            selectIndex: -1,
             modal_loading: false,
+
+            createTag: {
+                name: "",
+                description: ""
+            },
+
+            selectTag: {
+                id: -1,
+                name: "",
+                description: ""
+            },
+
             columns: [
                 {
                     title: "ID",
@@ -45,8 +77,12 @@ export default {
                     sortable: true
                 },
                 {
-                    title: "类别名称",
-                    key: "category"
+                    title: "标签名",
+                    key: "name"
+                },
+                {
+                    title: "描述",
+                    key: "description"
                 },
                 {
                     title: "操作",
@@ -67,10 +103,7 @@ export default {
                                     },
                                     on: {
                                         click: () => {
-                                            this.selectIndex = params.index;
-                                            this.selectCategory = this.data[
-                                                params.index
-                                            ]["category"];
+                                            this.selectTag = params.row;
                                             this.editModal = true;
                                         }
                                     }
@@ -86,7 +119,7 @@ export default {
                                     },
                                     on: {
                                         click: () => {
-                                            this.selectIndex = params.index;
+                                            this.selectTag = params.row;
                                             this.delModal = true;
                                         }
                                     }
@@ -105,18 +138,15 @@ export default {
     },
     methods: {
         updateData() {
-            axios.get("/category/videos").then(res => {
+            axios.get("/tags").then(res => {
                 this.data = res.data.data;
             });
         },
-        editCategory() {
+        editData() {
             axios({
                 method: "PUT",
-                url: `/category/videos/${this.data[this.selectIndex]["id"]}`,
-                params: {
-                    id: this.selectIndex,
-                    category: this.selectCategory
-                }
+                url: `/tags/${this.selectTag.id}`,
+                params: this.selectTag
             })
                 .then(res => {
                     this.$Message.info("修改成功");
@@ -128,11 +158,11 @@ export default {
                     this.editModal = false;
                 });
         },
-        delCategory() {
+        delData() {
             this.modal_loading = true;
             axios({
                 method: "delete",
-                url: `/category/videos/${this.data[this.selectIndex]["id"]}`
+                url: `/tags/${this.selectTag.id}`
             })
                 .then(res => {
                     this.$Message.info("删除成功");
@@ -146,18 +176,16 @@ export default {
                     this.delModal = false;
                 });
         },
-        create() {
+        createData() {
             axios({
                 method: "POST",
-                url: `/category/videos`,
-                params: {
-                    category: this.createCategory
-                }
+                url: `/tags`,
+                params: this.createTag
             })
                 .then(res => {
                     this.$Message.info("创建成功");
                     this.updateData();
-                    this.createCategory = "";
+                    this.createTag = {};
                 })
                 .catch(res => {
                     this.$Message.error("发生错误");
@@ -169,4 +197,7 @@ export default {
 </script>
 
 <style>
+.modal-input {
+    margin: 1em 2.5em 1em;
+}
 </style>

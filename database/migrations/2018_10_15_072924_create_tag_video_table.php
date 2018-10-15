@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticleCategoriesTable extends Migration
+class CreateTagVideoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateArticleCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_categories', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('category', 10)->unique();
-            $table->softDeletes();
+        Schema::create('tag_video', function (Blueprint $table) {
+            $table->integer('tag_id')->unsigned()->index();
+            $table->integer('video_id')->unsigned()->index();
+
+            $table->primary(['tag_id', 'video_id']);
         });
     }
 
@@ -27,6 +28,6 @@ class CreateArticleCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('tag_video');
     }
 }
