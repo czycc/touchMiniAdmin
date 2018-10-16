@@ -10,6 +10,12 @@ const routes = [
     }, {
         path: '/admin/tags',
         component: () => import('./components/tag/Tag.vue')
+    }, {
+        path: '/admin/videos',
+        component: () => import('./components/video/Video.vue')
+    }, {
+        path: '/admin/videos/:id/edit',
+        component: () => import('./components/video/Edit.vue')
     }
 ];
 

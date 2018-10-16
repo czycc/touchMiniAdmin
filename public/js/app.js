@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		2: 0
+/******/ 		4: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -86,7 +86,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({}[chunkId]||chunkId) + ".js";
+/******/ 		script.src = __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + "." + {"5":"c83d575b6a7ea78cdda3","6":"92c22e4a067a9139f53e","7":"8c467d1710913d3af19f","8":"2240086f7eea4307d190","9":"83586dca280c9a6ee5d5"}[chunkId] + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -12515,7 +12515,7 @@ window._ = __webpack_require__(16);
 var token = document.getElementsByTagName('meta')['csrf-token'];
 
 if (token) {
-  console.log(token.content);
+  window.baseURL = "http://gotop-admin.test";
   window.axios = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
     baseURL: "http://gotop-admin.test"
   });
@@ -75221,6 +75221,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -75357,60 +75364,89 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c(
-                        "Submenu",
-                        { attrs: { name: "3" } },
+                        "MenuGroup",
+                        { attrs: { title: "公司微信小程序" } },
                         [
                           _c(
-                            "template",
-                            { slot: "title" },
+                            "Submenu",
+                            { attrs: { name: "3" } },
                             [
-                              _c("Icon", { attrs: { type: "logo-youtube" } }),
-                              _vm._v("小程序视频模块\n                        ")
+                              _c(
+                                "template",
+                                { slot: "title" },
+                                [
+                                  _c("Icon", {
+                                    attrs: { type: "logo-youtube" }
+                                  }),
+                                  _vm._v(
+                                    "小程序视频模块\n                            "
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "MenuItem",
+                                {
+                                  attrs: {
+                                    name: "3-1",
+                                    to: "/admin/category/videos"
+                                  }
+                                },
+                                [_vm._v("视频分类")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "MenuItem",
+                                { attrs: { name: "3-2", to: "/admin/videos" } },
+                                [_vm._v("视频管理")]
+                              )
                             ],
-                            1
+                            2
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "Submenu",
+                            { attrs: { name: "4" } },
+                            [
+                              _c(
+                                "template",
+                                { slot: "title" },
+                                [
+                                  _c("Icon", {
+                                    attrs: { type: "ios-analytics" }
+                                  }),
+                                  _vm._v(
+                                    "小程序文章模块\n                            "
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("MenuItem", { attrs: { name: "4-1" } }, [
+                                _vm._v("文章分类")
+                              ]),
+                              _vm._v(" "),
+                              _c("MenuItem", { attrs: { name: "4-2" } }, [
+                                _vm._v("文章管理")
+                              ])
+                            ],
+                            2
                           ),
                           _vm._v(" "),
                           _c(
                             "MenuItem",
-                            {
-                              attrs: {
-                                name: "3-1",
-                                to: "/admin/category/videos"
-                              }
-                            },
-                            [_vm._v("视频分类")]
-                          ),
-                          _vm._v(" "),
-                          _c("MenuItem", { attrs: { name: "3-2" } }, [
-                            _vm._v("视频列表")
-                          ])
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "Submenu",
-                        { attrs: { name: "4" } },
-                        [
-                          _c(
-                            "template",
-                            { slot: "title" },
+                            { attrs: { name: "5", to: "/admin/tags" } },
                             [
-                              _c("Icon", { attrs: { type: "ios-analytics" } }),
-                              _vm._v("Item 3\n                        ")
+                              _c("Icon", { attrs: { type: "md-document" } }),
+                              _vm._v(
+                                "\n                        公司介绍\n                        "
+                              )
                             ],
                             1
-                          ),
-                          _vm._v(" "),
-                          _c("MenuItem", { attrs: { name: "4-1" } }, [
-                            _vm._v("Option 1")
-                          ]),
-                          _vm._v(" "),
-                          _c("MenuItem", { attrs: { name: "4-2" } }, [
-                            _vm._v("Option 2")
-                          ])
+                          )
                         ],
-                        2
+                        1
                       )
                     ],
                     1
@@ -75481,17 +75517,27 @@ if (false) {
 var routes = [{
     path: '/admin/index',
     component: function component() {
-        return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 57));
+        return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 57));
     }
 }, {
     path: '/admin/category/videos',
     component: function component() {
-        return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 58));
+        return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 58));
     }
 }, {
     path: '/admin/tags',
     component: function component() {
-        return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 68));
+        return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 59));
+    }
+}, {
+    path: '/admin/videos',
+    component: function component() {
+        return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 60));
+    }
+}, {
+    path: '/admin/videos/:id/edit',
+    component: function component() {
+        return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 78));
     }
 }];
 

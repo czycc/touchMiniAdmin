@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Video;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,14 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        $videos = Video::with('category:id,category')
+            ->has('category')
+            ->orderByDesc('created_at')
+            ->get();
+
+        return response()->json([
+            'data' => $videos
+        ]);
     }
 
     /**
@@ -46,7 +54,11 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        //
+        $video = Video::find($id);
+
+        return response()->json([
+            'data' => $video
+        ]);
     }
 
     /**

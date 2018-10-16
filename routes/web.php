@@ -22,6 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //视频分类管理
 Route::apiResource('category/videos', 'Admin\VideoCategoryController');
+//视频管理
+Route::apiResource('videos', 'Admin\VideoController');
 //标签管理
 Route::apiResource('tags', 'Admin\TagController');
 

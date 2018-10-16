@@ -32,20 +32,27 @@
                             标签管理
                             </MenuItem>
                         </MenuGroup>
-                        <Submenu name="3">
-                            <template slot="title">
-                                <Icon type="logo-youtube" />小程序视频模块
-                            </template>
-                            <MenuItem name="3-1" to="/admin/category/videos">视频分类</MenuItem>
-                            <MenuItem name="3-2">视频列表</MenuItem>
-                        </Submenu>
-                        <Submenu name="4">
-                            <template slot="title">
-                                <Icon type="ios-analytics"></Icon>Item 3
-                            </template>
-                            <MenuItem name="4-1">Option 1</MenuItem>
-                            <MenuItem name="4-2">Option 2</MenuItem>
-                        </Submenu>
+                        <MenuGroup title="公司微信小程序">
+                            <Submenu name="3">
+                                <template slot="title">
+                                    <Icon type="logo-youtube" />小程序视频模块
+                                </template>
+                                <MenuItem name="3-1" to="/admin/category/videos">视频分类</MenuItem>
+                                <MenuItem name="3-2" to="/admin/videos">视频管理</MenuItem>
+                            </Submenu>
+                            <Submenu name="4">
+                                <template slot="title">
+                                    <Icon type="ios-analytics"></Icon>小程序文章模块
+                                </template>
+                                <MenuItem name="4-1">文章分类</MenuItem>
+                                <MenuItem name="4-2">文章管理</MenuItem>
+                            </Submenu>
+                            <MenuItem name="5" to="/admin/tags">
+                            <Icon type="md-document" />
+                            公司介绍
+                            </MenuItem>
+                        </MenuGroup>
+
                     </Menu>
                 </Sider>
                 <Layout :style="{padding: '0 24px 24px'}">

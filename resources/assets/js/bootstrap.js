@@ -30,7 +30,7 @@ import Axios from 'axios'
 let token = document.getElementsByTagName('meta')['csrf-token'];
 
 if (token) {
-    console.log(token.content);
+    window.baseURL = process.env.MIX_APP_URL
     window.axios = Axios.create({
         baseURL: process.env.MIX_APP_URL,
     });
