@@ -19,9 +19,6 @@ class AboutController extends Controller
 
         return response()->json([
             'data' => $about ? [
-                'title' => $about->title,
-                'phone' => $about->phone,
-                'top_img' => json_decode($about->top_img)->top_img,
                 'intro' => $about->content
             ] : null
         ]);

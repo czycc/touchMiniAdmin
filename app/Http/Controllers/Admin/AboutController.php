@@ -13,7 +13,7 @@ class AboutController extends Controller
         $about = About::first();
 
         return response()->json([
-            'data' => $about->content
+            'data' => is_null($about) ? '' : $about->content
         ]);
     }
 
