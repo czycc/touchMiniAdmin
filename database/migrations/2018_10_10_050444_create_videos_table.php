@@ -17,6 +17,7 @@ class CreateVideosTable extends Migration
             $table->increments('id');
             $table->string('title', 50);
             $table->string('desc')->nullable();
+            $table->text('top_img');
             $table->text('video_url');
             $table->integer('video_category_id')->unsigned();
             $table->integer('user_id')->unsigned();

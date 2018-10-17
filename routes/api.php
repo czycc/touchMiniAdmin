@@ -25,3 +25,4 @@ Route::resource('projects', 'Mini\ProjectController');
 Route::resource('videos', 'Mini\VideoController');
 Route::get('about', 'Mini\AboutController@show');
 
+Route::post('file/upload', 'Helper\FileController@upload');

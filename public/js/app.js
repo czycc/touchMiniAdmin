@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		4: 0
+/******/ 		6: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -86,7 +86,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + "." + {"5":"c83d575b6a7ea78cdda3","6":"92c22e4a067a9139f53e","7":"8c467d1710913d3af19f","8":"2240086f7eea4307d190","9":"83586dca280c9a6ee5d5"}[chunkId] + ".js";
+/******/ 		script.src = __webpack_require__.p + "js/" + ({}[chunkId]||chunkId) + ".js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -12515,7 +12515,6 @@ window._ = __webpack_require__(16);
 var token = document.getElementsByTagName('meta')['csrf-token'];
 
 if (token) {
-  window.baseURL = "http://gotop-admin.test";
   window.axios = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
     baseURL: "http://gotop-admin.test"
   });
@@ -75436,7 +75435,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "MenuItem",
-                            { attrs: { name: "5", to: "/admin/tags" } },
+                            { attrs: { name: "5", to: "/admin/about" } },
                             [
                               _c("Icon", { attrs: { type: "md-document" } }),
                               _vm._v(
@@ -75517,27 +75516,37 @@ if (false) {
 var routes = [{
     path: '/admin/index',
     component: function component() {
-        return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 57));
+        return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 57));
     }
 }, {
     path: '/admin/category/videos',
     component: function component() {
-        return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 58));
+        return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 58));
     }
 }, {
     path: '/admin/tags',
     component: function component() {
-        return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 59));
+        return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 59));
     }
 }, {
     path: '/admin/videos',
     component: function component() {
-        return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 60));
+        return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 60));
     }
 }, {
     path: '/admin/videos/:id/edit',
     component: function component() {
-        return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 78));
+        return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 61));
+    }
+}, {
+    path: '/admin/videos/create',
+    component: function component() {
+        return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 62));
+    }
+}, {
+    path: '/admin/about',
+    component: function component() {
+        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 88));
     }
 }];
 

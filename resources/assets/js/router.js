@@ -16,6 +16,12 @@ const routes = [
     }, {
         path: '/admin/videos/:id/edit',
         component: () => import('./components/video/Edit.vue')
+    }, {
+        path: '/admin/videos/create',
+        component: () => import('./components/video/Create.vue')
+    }, {
+        path: '/admin/about',
+        component: () => import('./components/about/About.vue')
     }
 ];
 

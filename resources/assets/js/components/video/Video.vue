@@ -1,5 +1,9 @@
 <template>
     <div id="videos">
+        <p style="text-align:right;padding-bottom:20px">
+            <Button type="success" size="small" @click="tableActions('create-item')">新增</Button>
+        </p>
+
         <Table :columns="tableColumns" :data="tableData"></Table>
 
         <Modal v-model="delModal" width="360">
@@ -46,11 +50,21 @@ export default {
                 {
                     title: "分类",
                     key: "category",
-                    sortable: true
+                    sortable: true,
+                    maxWidth: 120,
+                    align: "center",
+                    render: (h, params) => {
+                        return h("div", params.row.category.category);
+                    }
                 },
                 {
                     title: "简介",
                     key: "desc",
+                    tooltip: true
+                },
+                {
+                    title: "头图链接",
+                    key: "top_img",
                     tooltip: true
                 },
                 {
@@ -154,6 +168,10 @@ export default {
                         this.modal_loading = false;
                         this.delModal = false;
                     });
+            } else if (action == "create-item") {
+                this.$router.push({
+                    path: `/admin/videos/create`
+                });
             } else {
                 this.$Message.error("未知操作");
             }

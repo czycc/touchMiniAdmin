@@ -1,4 +1,4 @@
-const { mix } = require('laravel-mix');
+const {mix} = require('laravel-mix');
 const path = require('path');
 /*
  |--------------------------------------------------------------------------
@@ -28,11 +28,20 @@ let config = {
     },
 }
 
-if (!process.argv.includes('--hot')) {
+
+
+if (mix.inProduction()) {
     config = Object.assign(config, {
         output: {
             publicPath: "/",
             chunkFilename: 'js/[name].[chunkhash].js'
+        }
+    })
+} else  {
+    config = Object.assign(config, {
+        output: {
+            publicPath: "/",
+            chunkFilename: 'js/[name].js'
         }
     })
 }

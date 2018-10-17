@@ -47,7 +47,7 @@
                                 <MenuItem name="4-1">文章分类</MenuItem>
                                 <MenuItem name="4-2">文章管理</MenuItem>
                             </Submenu>
-                            <MenuItem name="5" to="/admin/tags">
+                            <MenuItem name="5" to="/admin/about">
                             <Icon type="md-document" />
                             公司介绍
                             </MenuItem>

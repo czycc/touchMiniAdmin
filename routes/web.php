@@ -26,7 +26,11 @@ Route::apiResource('category/videos', 'Admin\VideoCategoryController');
 Route::apiResource('videos', 'Admin\VideoController');
 //标签管理
 Route::apiResource('tags', 'Admin\TagController');
-
+//文件上传
+Route::post('file/upload', 'Helper\FileController@upload');
+//公司介绍
+Route::get('about', 'Admin\AboutController@index');
+Route::post('about', 'Admin\AboutController@store');
 
 Route::view('/admin/{path}', 'admin.index')
     ->where('path', '.*');
