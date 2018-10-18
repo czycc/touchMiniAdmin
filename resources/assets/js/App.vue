@@ -44,8 +44,8 @@
                                 <template slot="title">
                                     <Icon type="ios-analytics"></Icon>小程序文章模块
                                 </template>
-                                <MenuItem name="4-1">文章分类</MenuItem>
-                                <MenuItem name="4-2">文章管理</MenuItem>
+                                <MenuItem name="4-1" to="/admin/category/articles">文章分类</MenuItem>
+                                <MenuItem name="4-2" to="/admin/articles">文章管理</MenuItem>
                             </Submenu>
                             <MenuItem name="5" to="/admin/about">
                             <Icon type="md-document" />

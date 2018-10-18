@@ -13,7 +13,7 @@ class ArticleCategory extends Model
     protected $guarded = ['id'];
     protected $dates = ['deleted_at'];
 
-    public function Articles()
+    public function articles()
     {
         return $this->hasMany('App\Models\Article');
     }

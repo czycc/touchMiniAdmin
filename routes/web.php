@@ -31,6 +31,10 @@ Route::post('file/upload', 'Helper\FileController@upload');
 //公司介绍
 Route::get('about', 'Admin\AboutController@index');
 Route::post('about', 'Admin\AboutController@store');
+//文章分类管理
+Route::apiResource('category/articles','Admin\ArticleCategoryController');
+//文章管理
+Route::apiResource('articles', 'Admin\ArticleController');
 
 Route::view('/admin/{path}', 'admin.index')
     ->where('path', '.*');

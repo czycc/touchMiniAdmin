@@ -22,6 +22,18 @@ const routes = [
     }, {
         path: '/admin/about',
         component: () => import('./components/about/About.vue')
+    }, {
+        path: '/admin/category/articles',
+        component: () => import('./components/category/Article.vue')
+    }, {
+        path: '/admin/articles',
+        component: () => import('./components/article/List.vue')
+    }, {
+        path: '/admin/articles/create',
+        component: () => import('./components/article/Create.vue')
+    }, {
+        path: '/admin/articles/:id/edit',
+        component: () => import('./components/article/Edit.vue')
     }
 ];
 
