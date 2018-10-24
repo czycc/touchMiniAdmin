@@ -27,10 +27,10 @@ class FileController extends Controller
 
         $path = Storage::disk('oss')
             ->putFile(
-                config('filesystems.disks.oss.baseDir') .'/'. $request->input('type'),
+                config('filesystems.disks.oss.baseDir') . '/' . $request->input('type'),
                 $request->file('file')
             );
 
-        return config('filesystems.disks.oss.oss_url')  . $path;
+        return config('filesystems.disks.oss.baseDir') . '/' . $path;
     }
 }
