@@ -31,6 +31,6 @@ class FileController extends Controller
                 $request->file('file')
             );
 
-        return config('filesystems.disks.oss.baseDir') . '/' . $path;
+        return config('filesystems.disks.oss.oss_out_url') . $path;
     }
 }

@@ -75,7 +75,8 @@ return [
             'ssl' => true, // true to use 'https://' and false to use 'http://'. default is false,
             'isCName' => false, // 是否使用自定义域名,true: 则Storage.url()会使用自定义的cdn或域名生成文件url， false: 则使用外部节点生成url
             'debug' => false,
-            'baseDir' => env('oss_baseDir') //默认根路径
+            'baseDir' => env('oss_baseDir'), //默认根路径
+            'oss_out_url' => env('oss_out_url') //外网地址
         ],
 
     ],
