@@ -19,3 +19,9 @@ public/res/pingAn/en/.DS_Store
 /public/js/
 /public/css/
 /.vscode/
+/admin/dist/
+/admin/node_modules/
+/admin/public/
+/admin/.vscode/
+/resources/views/admin/index.blade.php
+/public/dashboard/

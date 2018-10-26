@@ -5,6 +5,12 @@
             <Input v-model="formData.title"></Input>
         </p>
         <p>
+            <label for="category">文章分类：</label>
+            <Select v-model="formData.article_category_id">
+                <Option v-for="item in categories" :value="item.id" :key="item.id">{{ item.category }}</Option>
+            </Select>
+        </p>
+        <p>
             <label for="desc">描述：</label>
             <Input v-model="formData.desc" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..." />
         </p>
@@ -18,12 +24,7 @@
             </Upload>
             <Input v-model="formData.img_url" placeholder="输入头图链接"></Input>
         </p>
-        <p>
-            <label for="category">文章分类：</label>
-            <Select v-model="formData.article_category_id">
-                <Option v-for="item in categories" :value="item.id" :key="item.id">{{ item.category }}</Option>
-            </Select>
-        </p>
+
         <p id="editor">
             <label for="category">文章内容</label>：</label>
             <mavon-editor v-model="formData.content" ref=md :ishljs="true" @imgAdd="imgUpload" style="height: 100%"></mavon-editor>
