@@ -45,6 +45,11 @@ return [
             'driver' => 'passport',
             'provider' => 'users',
         ],
+        //用于后台登陆
+        'admin' => [
+            'driver' => 'passport',
+            'provider' => 'admin_users',
+        ],
     ],
 
     /*
@@ -68,6 +73,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'admin_users' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\AdminUser::class
         ],
 
         // 'users' => [
@@ -94,6 +104,11 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admin_users',
             'table' => 'password_resets',
             'expire' => 60,
         ],
