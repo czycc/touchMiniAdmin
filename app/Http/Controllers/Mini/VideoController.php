@@ -16,7 +16,7 @@ class VideoController extends Controller
     public function index()
     {
         $videos = VideoCategory::with(['videos' => function ($query) {
-            $query->select(['videos.id', 'title', 'desc', 'video_url', 'video_category_id', 'videos.created_at'])
+            $query->select(['videos.id', 'title', 'desc','top_img' , 'video_url', 'video_category_id', 'videos.created_at'])
                 ->orderBy('created_at', 'desc')
                 ->take(100);
         }])->get();
