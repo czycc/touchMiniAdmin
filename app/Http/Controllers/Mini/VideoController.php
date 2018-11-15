@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Mini;
 
+use App\Models\Video;
 use App\Models\VideoCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -55,7 +56,11 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        //
+        $video = Video::find($id);
+
+        return response()->json([
+            'data' => $video
+        ]);
     }
 
     /**
