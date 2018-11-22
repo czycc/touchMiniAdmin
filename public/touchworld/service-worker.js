@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/touchworld/precache-manifest.9b1f4586288d15c2939630954c4c504c.js"
+  "https://cs.touchworld-sh.com/precache-manifest.124f55e6905aa28a75df53d868750945.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "touchworld"});
