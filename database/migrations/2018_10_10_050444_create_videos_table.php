@@ -19,18 +19,15 @@ class CreateVideosTable extends Migration
             $table->string('desc')->nullable();
             $table->text('top_img');
             $table->text('video_url');
+            $table->text('cloud_url')->nullable()->comment('视频的云盘链接');
             $table->integer('video_category_id')->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->string('username',50)->default('admin')->comment('上次修改人');
             $table->timestamps();
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('no action');
             $table->foreign('video_category_id')
                 ->references('id')
                 ->on('video_categories')
-                ->onDelete('no action');
+                ->onDelete('CASCADE');
         });
     }
 

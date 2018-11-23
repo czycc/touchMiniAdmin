@@ -32,8 +32,4 @@ class User extends Authenticatable
 
 //    protected $dates = ['deleted_at'];
 
-    public function projects()
-    {
-        return $this->belongsToMany('App\Models\Project', 'project_users', 'user_id', 'project_id');
-    }
 }

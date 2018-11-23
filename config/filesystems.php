@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud' => 'oss',
 
     /*
     |--------------------------------------------------------------------------
@@ -47,6 +47,12 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+        'admin' => [
+            'driver' => 'local',
+            'root' => public_path('upload'),
+            'visibility' => 'public',
+            'url' => env('APP_URL').'/uploads',
+        ],
 
         'public' => [
             'driver' => 'local',
@@ -54,7 +60,6 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -76,7 +81,7 @@ return [
             'isCName' => false, // 是否使用自定义域名,true: 则Storage.url()会使用自定义的cdn或域名生成文件url， false: 则使用外部节点生成url
             'debug' => false,
             'baseDir' => env('oss_baseDir'), //默认根路径
-            'oss_out_url' => env('oss_out_url') //外网地址
+            'url' => env('oss_out_url') //外网地址
         ],
 
     ],

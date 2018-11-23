@@ -19,18 +19,14 @@ class CreateArticlesTable extends Migration
             $table->string('desc')->comment('描述');
             $table->text('content');
             $table->text('img_url');
-            $table->integer('user_id')->unsigned();
+            $table->string('username')->default('other');
             $table->integer('article_category_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('no action');
             $table->foreign('article_category_id')
                 ->references('id')
                 ->on('article_categories')
-                ->onDelete('no action');
+                ->onDelete('CASCADE');
         });
     }
 
