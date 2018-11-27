@@ -143,7 +143,7 @@ class ArticleController extends Controller
             ->uniqueName()
             ->move('mini/article/images/' . Carbon::today()->toDateString());
 
-        $form->summernote('content', '内容');
+        $form->editor('content', '内容');
 
         $form->hidden('username', 'Username')->default('other');
 

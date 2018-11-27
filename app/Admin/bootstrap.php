@@ -19,8 +19,10 @@
  */
 
 use Encore\Admin\Grid\Column;
+use App\Admin\Extensions\Froala;
 
 Encore\Admin\Form::forget(['map', 'editor']);
+\Encore\Admin\Form::extend('editor', Froala::class);
 
 Column::extend('href', function ($value) {
     if (is_null($value)) {
