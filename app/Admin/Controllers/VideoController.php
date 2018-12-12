@@ -13,6 +13,7 @@ use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\MessageBag;
 
 class VideoController extends Controller
 {
@@ -134,7 +135,9 @@ class VideoController extends Controller
 
         $form->text('title', '标题');
         $form->text('desc', '描述');
-//        $form->cropper('top_img', '头图')->cRatio(600, 400);
+//        $form->cropper('top_img', '头图')->cRatio(600, 400)
+//            ->uniqueName()
+//            ->move('mini/video/images/' . Carbon::today()->toDateString());
         $form->image('top_img')
             ->fit(600, 400)
             ->uniqueName()

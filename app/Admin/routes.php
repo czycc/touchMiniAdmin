@@ -15,5 +15,6 @@ Route::group([
     $router->resource('category/video', 'VideoCategoryController');
     $router->resource('video', 'VideoController');
     $router->resource('article', 'ArticleController');
+    $router->resource('company', "CompanyController");
 
 });

@@ -12,5 +12,12 @@ class Video extends Model
     {
         return $this->belongsTo('App\Models\VideoCategory', 'video_category_id');
     }
+//
+//    public function setTopImgAttribute($value)
+//    {
+//        if (!url()->isValidUrl($value)) {
+//            $this->attributes['top_img'] = config('filesystems.disks.oss.url').$value;
+//        }
+//    }
 
 }

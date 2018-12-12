@@ -133,8 +133,8 @@ return [
 
         // Image and file upload path under the disk above.
         'directory' => [
-            'image' => env('oss_baseDir') . '/images',
-            'file' => env('oss_baseDir') . '/files',
+            'image' =>'/images',
+            'file' => '/files',
         ],
     ],
 

@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//显示公司项目主页
+Route::get('company', 'CompanyController@index');
+
+
 
 //视频分类管理
 Route::apiResource('category/videos', 'Admin\VideoCategoryController');
