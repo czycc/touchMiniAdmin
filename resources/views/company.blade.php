@@ -108,6 +108,7 @@
         $('.scroll').eq(status).fadeIn(1000).siblings().fadeOut(1000);
         if (status >= len) {
             status = -1;
+            window.location.reload();
 //            setTimeout(function () {
 //                window.location.reload();
 //            }, 8000)
