@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Mini;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Intervention\Image\Image;
+use Intervention\Image\Facades\Image;
 
 class QrcodeController extends Controller
 {
