@@ -10,7 +10,7 @@ class QrcodeController extends Controller
 {
     public function getWXACodeUnlimit(Request $request)
     {
-        $scene = $request->input('$scene');
+        $scene = $request->input('scene');
         $mini = \EasyWeChat::miniProgram();
         $res = $mini->app_code->getUnlimit($scene, [
             'path' => 'pages/video'
