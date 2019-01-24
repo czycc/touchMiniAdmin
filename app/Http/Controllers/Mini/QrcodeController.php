@@ -16,7 +16,7 @@ class QrcodeController extends Controller
             'path' => 'pages/video'
         ]);
         if ($res instanceof \EasyWeChat\Kernel\Http\StreamResponse) {
-            return Image::make($res)->response();
+            return Image::make($res->getBody()->getContents())->response();
         }
         return $res;
     }
