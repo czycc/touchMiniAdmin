@@ -26,3 +26,5 @@ Route::resource('videos', 'Mini\VideoController');
 Route::get('about', 'Mini\AboutController@show');
 
 Route::post('file/upload', 'Helper\FileController@upload');
+
+Route::get('mini/qrcode/unlimit', 'Mini\QrcodeController@getWXACodeUnlimit');
